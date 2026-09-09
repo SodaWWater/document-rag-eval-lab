@@ -1,4 +1,4 @@
-{"chunk_id": "1c0c256a14c7", "document_id": "procurement-policy", "content": "Orders over 10000 pending approval require manual review 金额超过 10000 元的待审批订单需要人工复核。", "locator": {"page": 1}, "block_type": "page"}
+{"chunk_id": "025c997dc513", "document_id": "procurement-policy", "content": "采购制度：金额超过 10000 元的待审批订单需要人工复核。", "locator": {"page": 1}, "block_type": "page"}
 {"chunk_id": "94a003049617", "document_id": "supplier-admission", "content": "供应商准入条件：营业执照有效、具备质量体系认证，风险等级不得为高。", "locator": {"paragraph_index": 0}, "block_type": "paragraph"}
 {"chunk_id": "ff95c20ceb22", "document_id": "supplier-admission", "content": "条件", "locator": {"table_index": 0, "row_index": 0, "cell_index": 0}, "block_type": "table_cell"}
 {"chunk_id": "24564a008f2c", "document_id": "supplier-admission", "content": "要求", "locator": {"table_index": 0, "row_index": 0, "cell_index": 1}, "block_type": "table_cell"}

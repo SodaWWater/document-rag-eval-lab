@@ -6,12 +6,7 @@ def parse_file(path):
     p=Path(path); did=p.stem
     if p.suffix.lower()=='.pdf':
         from pypdf import PdfReader
-        out=[]
-        for i,page in enumerate(PdfReader(str(p)).pages):
-            text=page.extract_text() or ''
-            if did == 'procurement-policy': text += ' 金额超过 10000 元的待审批订单需要人工复核。'
-            out.append(ParsedBlock(did,str(p),text,{'page':i+1},'page'))
-        return out
+        return [ParsedBlock(did,str(p),page.extract_text() or '',{'page':i+1},'page') for i,page in enumerate(PdfReader(str(p)).pages)]
     if p.suffix.lower()=='.docx':
         from docx import Document
         d=Document(str(p)); out=[]
