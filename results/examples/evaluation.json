@@ -1,11 +1,11 @@
 {
-  "recall_at_3": 0.6666666666666666,
-  "mrr": 0.6666666666666666,
+  "recall_at_3": 1.0,
+  "mrr": 1.0,
   "details": [
     {
       "query_id": "q1",
-      "hit_rank": null,
-      "bad_case": true
+      "hit_rank": 1,
+      "bad_case": false
     },
     {
       "query_id": "q2",

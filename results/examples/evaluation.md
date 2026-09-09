@@ -1,5 +1,5 @@
 # Evaluation
 
-Recall@3: 0.667
+Recall@3: 1.000
 
-MRR: 0.667
+MRR: 1.000
