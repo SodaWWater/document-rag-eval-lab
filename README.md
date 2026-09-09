@@ -14,3 +14,14 @@
 RAGFlow 是源码学习参考，不复制其完整源码，也不把上游能力计为本项目已实现能力。上游版本、许可证和学习边界记录在 `docs/learning-boundary.md`。
 
 项目使用自建或许可证明确的样本，不包含未授权文档。运行命令、评测结果和演示截图均以仓库中可复现的脚本与原始输出为准。
+
+## 运行
+
+```powershell
+python -m unittest discover -s tests -v
+python scripts/ingest.py
+python scripts/query.py --query "金额超过一万元的待审批订单如何处理"
+python scripts/evaluate.py
+```
+
+结果写入 `results/examples/`，包括带来源坐标的 chunks、候选与 citations，以及 Recall@3/MRR 摘要。当前关键词检索未启用向量模型，`vector_score` 明确为 `null`；本地结果不代表生产系统效果。

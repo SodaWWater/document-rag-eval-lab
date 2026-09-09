@@ -1,0 +1,130 @@
+{
+  "query": "金额超过一万元的待审批订单如何处理",
+  "candidates": [
+    {
+      "chunk_id": "1c0c256a14c7",
+      "document_id": "procurement-policy",
+      "content": "Orders over 10000 pending approval require manual review 金额超过 10000 元的待审批订单需要人工复核。",
+      "locator": {
+        "page": 1
+      },
+      "keyword_score": 20,
+      "vector_score": null,
+      "fused_score": 20,
+      "pre_rank": 1,
+      "post_rank": 1
+    },
+    {
+      "chunk_id": "d0cef509e618",
+      "document_id": "supplier-register",
+      "content": "审核日期",
+      "locator": {
+        "sheet": "供应商审核",
+        "row": 1,
+        "column": 3,
+        "cell": "C1"
+      },
+      "keyword_score": 1,
+      "vector_score": null,
+      "fused_score": 1,
+      "pre_rank": 2,
+      "post_rank": 2
+    },
+    {
+      "chunk_id": "24564a008f2c",
+      "document_id": "supplier-admission",
+      "content": "要求",
+      "locator": {
+        "table_index": 0,
+        "row_index": 0,
+        "cell_index": 1
+      },
+      "keyword_score": 0,
+      "vector_score": null,
+      "fused_score": 0,
+      "pre_rank": 3,
+      "post_rank": 3
+    }
+  ],
+  "reranked": [
+    {
+      "chunk_id": "1c0c256a14c7",
+      "document_id": "procurement-policy",
+      "content": "Orders over 10000 pending approval require manual review 金额超过 10000 元的待审批订单需要人工复核。",
+      "locator": {
+        "page": 1
+      },
+      "keyword_score": 20,
+      "vector_score": null,
+      "fused_score": 20,
+      "pre_rank": 1,
+      "post_rank": 1
+    },
+    {
+      "chunk_id": "d0cef509e618",
+      "document_id": "supplier-register",
+      "content": "审核日期",
+      "locator": {
+        "sheet": "供应商审核",
+        "row": 1,
+        "column": 3,
+        "cell": "C1"
+      },
+      "keyword_score": 1,
+      "vector_score": null,
+      "fused_score": 1,
+      "pre_rank": 2,
+      "post_rank": 2
+    },
+    {
+      "chunk_id": "24564a008f2c",
+      "document_id": "supplier-admission",
+      "content": "要求",
+      "locator": {
+        "table_index": 0,
+        "row_index": 0,
+        "cell_index": 1
+      },
+      "keyword_score": 0,
+      "vector_score": null,
+      "fused_score": 0,
+      "pre_rank": 3,
+      "post_rank": 3
+    }
+  ],
+  "answer_context": "基于检索结果的回答上下文",
+  "citations": [
+    {
+      "document_id": "procurement-policy",
+      "file_name": "procurement-policy",
+      "chunk_id": "1c0c256a14c7",
+      "locator": {
+        "page": 1
+      },
+      "snippet": "Orders over 10000 pending approval require manual review 金额超过 10000 元的待审批订单需要人工复核。"
+    },
+    {
+      "document_id": "supplier-register",
+      "file_name": "supplier-register",
+      "chunk_id": "d0cef509e618",
+      "locator": {
+        "sheet": "供应商审核",
+        "row": 1,
+        "column": 3,
+        "cell": "C1"
+      },
+      "snippet": "审核日期"
+    },
+    {
+      "document_id": "supplier-admission",
+      "file_name": "supplier-admission",
+      "chunk_id": "24564a008f2c",
+      "locator": {
+        "table_index": 0,
+        "row_index": 0,
+        "cell_index": 1
+      },
+      "snippet": "要求"
+    }
+  ]
+}
