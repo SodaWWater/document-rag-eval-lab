@@ -3,7 +3,7 @@ from pathlib import Path
 sys.path.insert(0,'src')
 from document_rag_eval.ingestion import parse_file
 from document_rag_eval.chunking import make_chunks
-from document_rag_eval.retrieval import retrieve
+from document_rag_eval.retrieval import retrieve, HybridRetriever
 from document_rag_eval.citation import citations
 from document_rag_eval.evaluation import evaluate
 class TestRAG(unittest.TestCase):
@@ -18,6 +18,9 @@ class TestRAG(unittest.TestCase):
   self.assertEqual(make_chunks(self.blocks)[0].chunk_id,self.chunks[0].chunk_id); r=retrieve('金额 待审批',self.chunks); self.assertIn('vector_score',r[0]); self.assertIsNone(r[0]['vector_score']); self.assertIn('locator',r[0])
  def test_query_returns_citations_with_filename(self):
   rows=retrieve('金额 待审批',self.chunks); cs=citations(rows); self.assertTrue(cs); self.assertTrue(cs[0]['file_name'].endswith('.pdf'))
+ def test_hybrid_retriever_contract(self):
+  row=HybridRetriever().retrieve('金额 待审批',self.chunks)[0]
+  self.assertIsNone(row['vector_score']); self.assertIn('pre_rank',row); self.assertIn('post_rank',row)
  def test_gold_metrics_are_computed_from_output(self):
   rows=retrieve('供应商准入条件',self.chunks); gold=[{'query_id':'hit','query':'供应商准入条件','relevant_chunk_ids':[rows[0]['chunk_id']]},{'query_id':'miss','query':'不存在内容','relevant_chunk_ids':['missing']}]
   result=evaluate(gold,{'hit':rows,'miss':retrieve('不存在内容',self.chunks)}); self.assertEqual(result['details'][0]['hit_rank'],1); self.assertTrue(result['details'][1]['bad_case']); self.assertEqual(result['recall_at_3'],0.5)
