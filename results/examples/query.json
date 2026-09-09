@@ -98,7 +98,34 @@
       "post_rank": 3
     }
   ],
-  "answer_context": "基于检索结果的回答上下文",
+  "answer_context": [
+    {
+      "locator": {
+        "page": 1
+      },
+      "content": "采购制度：金额超过 10000 元的待审批订单需要人工复核。",
+      "file_name": "procurement-policy.pdf"
+    },
+    {
+      "locator": {
+        "sheet": "供应商审核",
+        "row": 1,
+        "column": 3,
+        "cell": "C1"
+      },
+      "content": "审核日期",
+      "file_name": "supplier-register.xlsx"
+    },
+    {
+      "locator": {
+        "table_index": 0,
+        "row_index": 0,
+        "cell_index": 1
+      },
+      "content": "要求",
+      "file_name": "supplier-admission.docx"
+    }
+  ],
   "citations": [
     {
       "document_id": "procurement-policy",

@@ -24,4 +24,7 @@ class TestRAG(unittest.TestCase):
  def test_gold_metrics_are_computed_from_output(self):
   rows=retrieve('供应商准入条件',self.chunks); gold=[{'query_id':'hit','query':'供应商准入条件','relevant_chunk_ids':[rows[0]['chunk_id']]},{'query_id':'miss','query':'不存在内容','relevant_chunk_ids':['missing']}]
   result=evaluate(gold,{'hit':rows,'miss':retrieve('不存在内容',self.chunks)}); self.assertEqual(result['details'][0]['hit_rank'],1); self.assertTrue(result['details'][1]['bad_case']); self.assertEqual(result['recall_at_3'],0.5)
+ def test_query_output_contains_real_context(self):
+  rows=retrieve('金额 待审批',self.chunks); answer_context=[{'locator':r['locator'],'content':r['content'],'file_name':r['file_name']} for r in rows]
+  self.assertTrue(answer_context); self.assertIsInstance(answer_context,list); self.assertIn('locator',answer_context[0]); self.assertIn('content',answer_context[0]); self.assertTrue(any('金额' in item['content'] or '待审批' in item['content'] or '审批' in item['content'] for item in answer_context)); self.assertTrue(any('.pdf' in item['file_name'] or '.docx' in item['file_name'] or '.xlsx' in item['file_name'] for item in answer_context))
 if __name__=='__main__': unittest.main()

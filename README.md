@@ -8,7 +8,7 @@
 
 - PDF、DOCX、XLSX 的结构化解析适配
 - 保留来源坐标的 Chunk 数据结构
-- 关键词与向量候选融合、可替换 Reranker
+- 可扩展的 HybridRetriever 接口,当前基于关键词基线实现、可替换 Reranker
 - Citation 展示、Gold Set、Bad Case 回归和离线评测
 
 RAGFlow 是源码学习参考，不复制其完整源码，也不把上游能力计为本项目已实现能力。上游版本、许可证和学习边界记录在 `docs/learning-boundary.md`。
